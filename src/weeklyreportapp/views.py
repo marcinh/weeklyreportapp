@@ -11,7 +11,7 @@ from django.template import loader
 
 def index(request):
     context = {}
-    template_name = 'index.html'
+    template_name = 'weeklyreportapp/index.html'
     if request.user.is_authenticated:
         project_list = Project.objects.filter(
             (Q(pi=request.user) & Q(status__name__in=['New', 'Active', ])) |

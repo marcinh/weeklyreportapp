@@ -1,0 +1,2 @@
+recursive-include src/weeklyreportapp/templates *
+recursive-include src/weeklyreportapp/static *
