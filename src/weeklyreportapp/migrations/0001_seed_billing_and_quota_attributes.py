@@ -3,9 +3,9 @@ from django.db import migrations
 
 def forwards(apps, schema_editor):
     # ColdFront models (via historical app registry)
-    AttributeType = apps.get_model("resources", "AttributeType")
-    AllocationAttributeType = apps.get_model("allocations", "AllocationAttributeType")
-    ResourceAttributeType = apps.get_model("resources", "ResourceAttributeType")
+    AttributeType = apps.get_model("resource", "AttributeType")
+    AllocationAttributeType = apps.get_model("allocation", "AllocationAttributeType")
+    ResourceAttributeType = apps.get_model("resource", "ResourceAttributeType")
 
     # AttributeType names are defined by ColdFront; commonly: "Int", "Float", "Text", "Yes/No"
     int_type = AttributeType.objects.get(name="Int")
