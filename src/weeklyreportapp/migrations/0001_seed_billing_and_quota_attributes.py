@@ -9,7 +9,6 @@ def forwards(apps, schema_editor):
 
     # AttributeType names are defined by ColdFront; commonly: "Int", "Float", "Text", "Yes/No"
     int_type = AttributeType.objects.get(name="Int")
-    float_type = AttributeType.objects.get(name="Float")
 
     # 1) AllocationAttributeType: "Quota in Bytes"
     # Pick values that fit your policy; these are safe defaults for a quota attribute.
@@ -29,7 +28,7 @@ def forwards(apps, schema_editor):
     ResourceAttributeType.objects.get_or_create(
         name="cost_per_terabyte",
         defaults={
-            "attribute_type": float_type,
+            "attribute_type": int_type,
             "is_required": False,
             "is_value_unique": False,
         },
